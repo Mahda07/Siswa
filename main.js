@@ -56,6 +56,6 @@ export async function tambahSiswa(nama,alamat){
   console.log("berhasip menyimpan data siswa")
 } catch (e) {
   // menampilkan pesan gagal
-  console.log("gagal menyimpan data siswa")
+  console.log("gagal menyimpan data siswa"+ e)
 }
   }
