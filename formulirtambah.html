@@ -25,11 +25,26 @@
        <input type="text" class="form-control" id="inputnama">
      </div>
      <div class=mb-3>
-       <button class="btn btn-primary">simpan</button>
+       <button class="btn btn-primary" id"tombolsimpan">simpan</button>
      </div>
    </form>
    
    <a href="index.html">kembali ke daftar siswa</a>
+   
+   <script type="module">
+     import { tambahSiswa } from "./main.js";
+     
+      $(document).ready(async function(){
+        // ambil data formulir
+        let nama = $("#inputnama").val()
+        let alamat = $("inputalamat").val()
+        
+        // ketika tombol tambah di pencet
+        $("#tombolsimpan").click(async function(){
+          await tambahSiswa(nama, alamat)
+          window.location.href = "index.html"
+        })
+      })
+   </script>
 </body>
-
 </html>
