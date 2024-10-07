@@ -42,7 +42,7 @@
          "<td>" + "</td>" +
          "<td>" + data.nama + "</td>" +
          "<td>" + data.alamat + "</td>" +
-         "<td>" + "<button class='btn btn-danger tombol-hapus' data='"+ data.id +"'>hapus</button>" +"</td>" +
+         "<td>" + "<a href='#' class='me-2 link-ubah' data='"+ data.id +"'>ubah</a><button class='btn btn-danger tombol-hapus' data='"+ data.id +"'>hapus</button>" +"</td>" +
          "</tr>"
            
          )
@@ -52,7 +52,13 @@
         await hapusSiswa($(this).attr('data'))
         location.reload()
       })
-      
+    
+      $('.link-ubah').click(async function(){
+        location.replace('formulirubah.html?id=' + $(this).attr('data')) 
+      })
+  
+  
+  
     })
     
   </script>
