@@ -30,7 +30,7 @@
   <a href="formulirtambah.html">tambah siswa</a>
   
   <script type="module">
-    import { ambilDaftarSiswa } from './main.js';
+    import { ambilDaftarSiswa, hapusSiswa } from './main.js';
     
     $(document).ready(async function() {
      let elemenDaftarSiswa = $("#daftar-siswa > tbody");
@@ -42,12 +42,16 @@
          "<td>" + "</td>" +
          "<td>" + data.nama + "</td>" +
          "<td>" + data.alamat + "</td>" +
-         "<td>" + "</td>" +
+         "<td>" + "<button class='btn btn-danger tombol-hapus' data='"+ data.id +"'>hapus</button>" +"</td>" +
          "</tr>"
            
          )
      })
-      
+     
+      $('.tombol-hapus').click(async function(){
+        await hapusSiswa($(this).attr('data'))
+        location.reload()
+      })
       
     })
     
