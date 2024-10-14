@@ -72,5 +72,5 @@ export async function tambahSiswa(nama,alamat){
   }
   
   export async function ubahSiswa(id,nama,alamat) {
-    await updateDoc(doc(basisdata, "siswa", id), { nama: nama, alamat: alamat })
+    await updateDoc(doc(basisdata, "siswa", id), { nama:nama, alamat:alamat })
   }
