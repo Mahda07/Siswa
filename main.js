@@ -45,6 +45,7 @@ export async function ambilDaftarSiswa() {
 }
 
 export async function tambahSiswa(nama,alamat){
+}
   try {
   // menyimpan data ke firebase
   const refDokumen = await addDoc(collection(basisdata, "siswa"), {
@@ -58,9 +59,18 @@ export async function tambahSiswa(nama,alamat){
   // menampilkan pesan gagal
   console.log("gagal menyimpan data siswa"+ e)
   }
- }
   
    export async function hapusSiswa(id) {
     await deleteDoc(doc(basisdata,"siswa",id))
   }
   
+  export async function ambilSiswa(id) {
+    const refDokumen = await doc(basisdata, "siswa", id)
+    const snapshotDocumen = await getDoc(refDokumen)
+    
+    return await snapshotDocumen.data()
+  }
+  
+  export async function ubahSiswa(id,nama,alamat) {
+    await updateDoc(doc(basisdata, "siswa", id), { nama: nama, alamat: alamat })
+  }
