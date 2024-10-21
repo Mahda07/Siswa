@@ -29,9 +29,42 @@
       <button class="btn btn-primary" id="tombolsimpan">simpan</button>
     </div>
   </form>
+
   <a href="index.html">kembali ke daftar siswa</a>
 
 
+  <script type="module">
+    import { tambahSiswa } from "./main.js";
+
+    $(document).ready(async function() {
+            // ketika tombol tambah di pencet
+            $("#tombolsimpan").click(async function(event) {
+              event.preventDefault()
+
+              // ambil data formulir
+              let nama = $("#inputnama").val()
+              let alamat = $("#inputalamat").val()
+
+              await tambahSiswa(nama, alamat)
+              window.location.href = "index.html"
+            });
+            <script type="module">
+          import { tambahSiswa } from "./main.js";
+      
+          $(document).ready(async function() {
+            // ketika tombol tambah di pencet
+            $("#tombolsimpan").click(async function(event) {
+              event.preventDefault()
+      
+              // ambil data formulir
+              let nama = $("#inputnama").val()
+              let alamat = $("#inputalamat").val()
+      
+              await tambahSiswa(nama, alamat)
+              window.location.href = "index.html"
+            })
+          })
+  </script>
   <script type="module">
     import { tambahSiswa } from "./main.js";
 
@@ -48,6 +81,8 @@
         window.location.href = "index.html"
       })
     })
+  </script>
+  });
   </script>
 </body>
 
